@@ -36,8 +36,11 @@ export interface foodItemsProps {
 // props for cart component
 export interface cartProps {
   cart: cartItemType[];
+  setCart: React.Dispatch<React.SetStateAction<cartItemType[]>>;
 }
 
 export interface cartItemProps {
   item: cartItemType;
+  cart: cartItemType[];
+  setCart: React.Dispatch<React.SetStateAction<cartItemType[]>>;
 }

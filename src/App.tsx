@@ -24,7 +24,7 @@ function App() {
         <h1 className="text-3xl font-bold">Desserts</h1>
         {foodItems.length && <FoodItems foodItems={foodItems} cart={cart} setCart={setCart} />}
       </div>
-      <Cart cart={cart} />
+      <Cart cart={cart} setCart={setCart}/>
     </div>
   );
 }

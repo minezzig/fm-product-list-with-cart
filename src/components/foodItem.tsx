@@ -57,20 +57,21 @@ export const FoodItem = ({
             Add to Cart
           </div>
         ) : (
-          <>
+          <div className="bg-red flex">
             <div
-              className="flex h-5 w-5 items-center justify-center rounded-full border border-white"
+              className="flex h-5 w-5 items-center justify-center rounded-full border border-white hover:bg-red hover:text-"
               onClick={() => handleDecrease(name)}
             >
               <img src="../../assets/images/icon-decrement-quantity.svg" />
             </div>
+            <div className="text-white">{cart.find(item => item.name === name)?.quantity}</div>
             <div
               className="flex h-5 w-5 items-center justify-center rounded-full border border-white"
               onClick={() => handleIncrease(name)}
             >
               <img src="../../assets/images/icon-increment-quantity.svg" />
             </div>
-          </>
+          </div>
         )}
       </div>
       <div>
