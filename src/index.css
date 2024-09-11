@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --red: hsl(14, 86%, 42%);
+    --green: hsl(159, 69%, 38%);
+    --rose1: hsl(20, 50%, 98%);
+    --rose2: hsl(13, 31%, 94%);
+    --rose3: hsl(14, 25%, 72%);
+    --rose4: hsl(7, 20%, 60%);
+    --rose5: hsl(12, 20%, 44%);
+    --rose6: hsl(14, 65%, 9%);
+}
+
+@font-face {
+    font-family: 'Red Hat';
+    src: url('/assets/fonts/RedHatText-VariableFont_wght.ttf') format('truetype');
+
+  }
