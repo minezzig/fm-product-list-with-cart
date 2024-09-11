@@ -3,7 +3,7 @@ import { CartItem } from "./cartItem";
 
 export const Cart = ({ cart, setCart }: cartProps) => {
   return (
-    <div className="h-fit min-w-[350px] rounded-xl bg-white p-5">
+    <div className="h-fit min-w-[300px] rounded-xl bg-white p-5">
       <h2 className="mb-3 text-xl font-bold text-red">
         Your Cart ({cart.reduce((sum, item) => sum + item.quantity, 0)})
       </h2>
@@ -23,13 +23,13 @@ export const Cart = ({ cart, setCart }: cartProps) => {
                 .toFixed(2)}
             </div>
           </div>
-          <div className="flex items-center justify-center rounded-lg bg-rose1 p-3">
+          <div className="flex items-center justify-center rounded-lg bg-rose1 p-3 text-sm">
             <img
               src="../../assets/images/icon-carbon-neutral.svg"
               alt="carbon-neutral"
               className="mr-3 inline"
             />
-            This is a <span>carbon-neutral</span> delivery
+            This is a &nbsp;<span className="font-bold">carbon-neutral</span>&nbsp;delivery
           </div>
           <button className="w-full rounded-3xl bg-red p-3 text-white hover:bg-rose5">
             Confirm Order

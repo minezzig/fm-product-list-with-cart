@@ -19,7 +19,7 @@ export const CartItem = ({ item, cart, setCart }: cartItemProps) => {
         <hr/>
       </div>
       <div>
-        <div className="p-1 border border-rose3 w-fit rounded-full" onClick={() => handleRemove(item.name)}><img src="/assets/images/icon-remove-item.svg" alt="remove item"/></div>
+        <div className="p-1 border border-rose3 w-fit rounded-full cursor-pointer hover:bg-red hover:text-white transition" onClick={() => handleRemove(item.name)}><img src="/assets/images/icon-remove-item.svg" alt="remove item"/></div>
       </div>
     </li>
   );
