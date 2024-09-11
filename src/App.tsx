@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="m-auto flex max-w-[1248px] flex-col md:flex-row p-5 md:p-20 justify-center gap-5">
       <div>
-        <h1 className="text-3xl font-bold">Desserts</h1>
+        <h1 className="text-3xl font-bold mb-3">Desserts</h1>
         {foodItems.length && <FoodItems foodItems={foodItems} cart={cart} setCart={setCart} />}
       </div>
       <Cart cart={cart} setCart={setCart}/>

@@ -4,14 +4,14 @@ import { CartItem } from "./cartItem";
 export const Cart = ({ cart, setCart }: cartProps) => {
   return (
     <div className="h-fit min-w-[300px] rounded-xl bg-white p-5">
-      <h2 className="mb-3 text-xl font-bold text-red">
+      <h2 className="mb-3 text-2xl font-bold text-red">
         Your Cart ({cart.reduce((sum, item) => sum + item.quantity, 0)})
       </h2>
       {cart.length ? (
         <div className="flex flex-col gap-5">
-          <div>
+          <div className="flex flex-col gap-7">
             {cart.map((item: cartItemType) => (
-              <CartItem item={item} cart={cart} setCart={setCart} />
+              <CartItem item={item} cart={cart} setCart={setCart} key={item.name}/>
             ))}
           </div>
           <div className="flex items-center justify-between">
@@ -29,7 +29,7 @@ export const Cart = ({ cart, setCart }: cartProps) => {
               alt="carbon-neutral"
               className="mr-3 inline"
             />
-            This is a &nbsp;<span className="font-bold">carbon-neutral</span>&nbsp;delivery
+            <div className="text-xs">This is a<span className="font-bold">&nbsp; carbon-neutral&nbsp; </span>delivery</div>
           </div>
           <button className="w-full rounded-3xl bg-red p-3 text-white hover:bg-rose5">
             Confirm Order

@@ -20,8 +20,6 @@ export interface cartItemType {
 // props of a single food item
 export interface foodItemProps {
   foodItem: foodItemType;
-  handleSelect: (name: string) => void;
-  selectedName: string;
   cart: cartItemType[];
   setCart: React.Dispatch<React.SetStateAction<cartItemType[]>>;
 }
