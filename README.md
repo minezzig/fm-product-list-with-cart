@@ -37,7 +37,9 @@ Code: [github repo](https://github.com/minezzig/fm-product-list-with-cart)
 
 ### Built with
 
-- Semantic HTML5
+- HTML
+- JavaScript
+- TypeScript
 - Tailwind CSS
 - React
 - Flexbox
@@ -50,6 +52,8 @@ Code: [github repo](https://github.com/minezzig/fm-product-list-with-cart)
 This project is an example of what I love! It was great practice for React components, and I had a lot of fun connecting them all together. This project showcases my ability to use Tailwind to design a simple yet effective page that allows users to select the food items they want, as well as the quantity. Using CSS, users can visually see which items have been included in their cart.
 
 From doing this project, I learned how important visual cues are. By simply changing colors or adding borders, users receive visual feedback that actions have taken place.
+
+I also used TypeScript in this project!  This is something that I've recently started to pick up and it is totally making sense!  It really frustrated me at first but now that I am getting used to it, it's much easier and has proven to be very helpful in preventing errors!
 
 ### Continued development
 
