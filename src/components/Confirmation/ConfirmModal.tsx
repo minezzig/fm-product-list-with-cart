@@ -14,7 +14,7 @@ export const ConfirmModal = ({cart, setModalOpen, setCart }: confirmModalProps) 
         <div className="flex flex-col gap-3">
           <div>
             <img
-              src="/assets/images/icon-order-confirmed.svg"
+              src="/images/icon-order-confirmed.svg"
               alt="confirmed"
             />
           </div>

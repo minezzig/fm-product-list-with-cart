@@ -26,7 +26,7 @@ export const CartItem = ({ item, cart, setCart }: cartItemProps) => {
           className="w-fit cursor-pointer rounded-full border border-rose3 p-1 transition hover:bg-red hover:text-white"
           onClick={() => handleRemove(item.name)}
         >
-          <img src="/assets/images/icon-remove-item.svg" alt="remove item" />
+          <img src="/images/icon-remove-item.svg" alt="remove item" />
         </div>
       </div>
     </li>

@@ -10,6 +10,7 @@ export const FoodItem = ({ foodItem, cart, setCart }: foodItemProps) => {
   };
   // increase quanity by 1
   const handleIncrease = (name: string) => {
+    console.log(image)
     const updatedCart = cart.map((item) => {
       if (item.name === name) {
         return { ...item, quantity: item.quantity + 1 };
@@ -31,7 +32,6 @@ export const FoodItem = ({ foodItem, cart, setCart }: foodItemProps) => {
     });
     setCart(updatedCart);
   };
-
   return (
     <div className="flex flex-1 flex-col">
       <div
@@ -53,7 +53,7 @@ export const FoodItem = ({ foodItem, cart, setCart }: foodItemProps) => {
           style={{}}
           onClick={() => addToCart(name)}
         >
-          <img src="../../assets/images/icon-add-to-cart.svg" />
+          <img src="/images/icon-add-to-cart.svg" />
           Add to Cart
         </div>
       ) : (
@@ -63,7 +63,7 @@ export const FoodItem = ({ foodItem, cart, setCart }: foodItemProps) => {
             onClick={() => handleDecrease(name)}
           >
             <img
-              src="/assets/images/icon-decrement-quantity.svg"
+              src="/images/icon-decrement-quantity.svg"
               alt="decrease"
             />
           </div>
@@ -75,7 +75,7 @@ export const FoodItem = ({ foodItem, cart, setCart }: foodItemProps) => {
             onClick={() => handleIncrease(name)}
           >
             <img
-              src="/assets/images/icon-increment-quantity.svg"
+              src="/images/icon-increment-quantity.svg"
               alt="increase"
             />
           </div>

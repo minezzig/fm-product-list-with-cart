@@ -39,7 +39,7 @@ export const Cart = ({ cart, setCart }: cartProps) => {
           </div>
           <div className="flex items-center justify-center rounded-lg bg-rose1 p-3 text-sm">
             <img
-              src="../../assets/images/icon-carbon-neutral.svg"
+              src="/images/icon-carbon-neutral.svg"
               alt="carbon-neutral"
               className="mr-3 inline"
             />
@@ -60,7 +60,7 @@ export const Cart = ({ cart, setCart }: cartProps) => {
         // if there are no items in cart, display this instead
         <div className="flex flex-col items-center justify-center">
           <img
-            src="../../assets/images/illustration-empty-cart.svg"
+            src="/images/illustration-empty-cart.svg"
             alt="cart"
           />
           <p className="text-red">Your added items will appear here.</p>
