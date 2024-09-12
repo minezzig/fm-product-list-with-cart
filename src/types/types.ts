@@ -15,6 +15,12 @@ export interface cartItemType {
   name: string;
   quantity: number;
   price: number;
+  image: {
+    desktop: string;
+    mobile: string;
+    tablet: string;
+    thumbnail: string;
+  }
 }
 
 // props of a single food item
@@ -40,5 +46,15 @@ export interface cartProps {
 export interface cartItemProps {
   item: cartItemType;
   cart: cartItemType[];
+  setCart: React.Dispatch<React.SetStateAction<cartItemType[]>>;
+}
+
+export interface confirmedItemProps {
+  item: cartItemType;
+}
+
+export interface confirmModalProps {
+  cart: cartItemType[];
+  setModalOpen: (status: boolean) => void;
   setCart: React.Dispatch<React.SetStateAction<cartItemType[]>>;
 }

@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { cartItemType, cartProps } from "../types/types";
 import { CartItem } from "./cartItem";
+import { ConfirmModal } from "./confirmModal";
 
 export const Cart = ({ cart, setCart }: cartProps) => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const toggleModal = () => {
+    window.scrollTo(0,0);
+    setModalOpen((prev) => !prev);
+  };
   return (
     <div className="h-fit min-w-[300px] rounded-xl bg-white p-5">
       <h2 className="mb-3 text-2xl font-bold text-red">
@@ -11,7 +18,12 @@ export const Cart = ({ cart, setCart }: cartProps) => {
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-7">
             {cart.map((item: cartItemType) => (
-              <CartItem item={item} cart={cart} setCart={setCart} key={item.name}/>
+              <CartItem
+                item={item}
+                cart={cart}
+                setCart={setCart}
+                key={item.name}
+              />
             ))}
           </div>
           <div className="flex items-center justify-between">
@@ -29,9 +41,16 @@ export const Cart = ({ cart, setCart }: cartProps) => {
               alt="carbon-neutral"
               className="mr-3 inline"
             />
-            <div className="text-xs">This is a<span className="font-bold">&nbsp; carbon-neutral&nbsp; </span>delivery</div>
+            <div className="text-xs">
+              This is a
+              <span className="font-bold">&nbsp; carbon-neutral&nbsp; </span>
+              delivery
+            </div>
           </div>
-          <button className="w-full rounded-3xl bg-red p-3 text-white hover:bg-rose5">
+          <button
+            className="w-full rounded-3xl bg-red p-3 text-white hover:bg-rose5"
+            onClick={toggleModal}
+          >
             Confirm Order
           </button>
         </div>
@@ -44,6 +63,7 @@ export const Cart = ({ cart, setCart }: cartProps) => {
           <p className="text-red">Your added items will appear here.</p>
         </div>
       )}
+      {modalOpen && <ConfirmModal cart={cart} setModalOpen={setModalOpen} setCart={setCart} />}
     </div>
   );
 };
