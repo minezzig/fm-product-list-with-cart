@@ -4,7 +4,7 @@ export const FoodItem = ({ foodItem, cart, setCart }: foodItemProps) => {
   const { name, price, category, image } = foodItem;
   // add selected item to cart
   const addToCart = (name: string) => {
-    const newItem = { name, quantity: 1, price, image: image};
+    const newItem = { name, quantity: 1, price, image: image };
     setCart((prev) => [...prev, newItem]);
     console.log(cart);
   };
@@ -21,7 +21,7 @@ export const FoodItem = ({ foodItem, cart, setCart }: foodItemProps) => {
 
   // decrease quanitty by 1 #CAAFA7
   const handleDecrease = (name: string) => {
-    const found = cart.find(item => item.name === name);
+    const found = cart.find((item) => item.name === name);
     if (found?.quantity === 1) return;
     const updatedCart = cart.map((item) => {
       if (item.name === name) {
@@ -33,15 +33,19 @@ export const FoodItem = ({ foodItem, cart, setCart }: foodItemProps) => {
   };
 
   return (
-    <div className="flex flex-1 flex-col">
+    <div className="flex flex-1 flex-col ">
       <div
         className={`overflow-hidden rounded-xl border-2 ${cart.find((item) => item.name === foodItem.name) ? "border-red" : "border-transparent"}`}
       >
-        <img
-          src={image.mobile}
-          alt={name}
-          className="md:aspect-square md:object-cover"
-        />
+        <picture>
+          <source srcSet={image.desktop} media="(min-width: 1024px)" />
+          <source srcSet={image.tablet} media="(min-width: 768px)" />
+          <img
+            src={image.mobile}
+            alt={name}
+            className="md:aspect-square md:object-cover"
+          />
+        </picture>
       </div>
       {!cart.find((item) => item.name === foodItem.name) ? (
         <div
@@ -58,7 +62,10 @@ export const FoodItem = ({ foodItem, cart, setCart }: foodItemProps) => {
             className="flex h-5 w-5 items-center justify-center rounded-full border border-rose1 transition hover:bg-rose1"
             onClick={() => handleDecrease(name)}
           >
-            <img src="/assets/images/icon-decrement-quantity.svg" alt="decrease"/>
+            <img
+              src="/assets/images/icon-decrement-quantity.svg"
+              alt="decrease"
+            />
           </div>
           <div className="text-white">
             {cart.find((item) => item.name === name)?.quantity}
@@ -67,7 +74,10 @@ export const FoodItem = ({ foodItem, cart, setCart }: foodItemProps) => {
             className="flex h-5 w-5 items-center justify-center rounded-full border border-rose1 transition hover:bg-rose1"
             onClick={() => handleIncrease(name)}
           >
-            <img src="/assets/images/icon-increment-quantity.svg" alt="increase" />
+            <img
+              src="/assets/images/icon-increment-quantity.svg"
+              alt="increase"
+            />
           </div>
         </div>
       )}
