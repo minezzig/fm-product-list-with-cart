@@ -17,6 +17,15 @@ export const ConfirmModal = ({cart, setModalOpen, setCart}: confirmModalProps) =
           <div className="text-xs text-red">We hope you enjoy your food!</div>
           <div className="h-fit min-w-[300px] rounded-xl bg-rose1 p-5">
             {cart.map(item => <ConfirmedItem item={item} key={item.name}/>)}
+          <div className="flex items-center justify-between mt-3">
+            <div>Order Total: </div>
+            <div className="font-bold text-2xl">
+              $
+              {cart
+                .reduce((sum, item) => sum + item.quantity * item.price, 0)
+                .toFixed(2)}
+            </div>
+          </div>
           </div>
           <button
             className="w-full rounded-3xl bg-red p-3 text-white hover:bg-rose5"
