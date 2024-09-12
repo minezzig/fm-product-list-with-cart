@@ -1,4 +1,4 @@
-import { foodItemProps } from "../types/types";
+import { foodItemProps } from "../../types";
 
 export const FoodItem = ({ foodItem, cart, setCart }: foodItemProps) => {
   const { name, price, category, image } = foodItem;
@@ -33,7 +33,7 @@ export const FoodItem = ({ foodItem, cart, setCart }: foodItemProps) => {
   };
 
   return (
-    <div className="flex flex-1 flex-col ">
+    <div className="flex flex-1 flex-col">
       <div
         className={`overflow-hidden rounded-xl border-2 ${cart.find((item) => item.name === foodItem.name) ? "border-red" : "border-transparent"}`}
       >

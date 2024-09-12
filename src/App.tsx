@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { FoodItems } from "./components/foodItems";
-import { Cart } from "./components/cart";
-import { foodItemType } from "./types/types";
-import { cartItemType } from "./types/types";
+import { FoodItems } from "./components/Food/FoodItems";
+import { Cart } from "./components/Cart/Cart";
+import { foodItemType } from "./types";
+import { cartItemType } from "./types";
 
 function App() {
   const [foodItems, setFoodItems] = useState<foodItemType[]>([]);
@@ -19,12 +19,14 @@ function App() {
   }, []);
 
   return (
-    <div className="m-auto flex max-w-[1248px] flex-col md:flex-row p-5 md:p-20 justify-center gap-5">
+    <div className="m-auto flex max-w-[1248px] flex-col justify-center gap-5 p-5 md:flex-row md:p-20">
       <div>
-        <h1 className="text-3xl font-bold mb-3">Desserts</h1>
-        {foodItems.length && <FoodItems foodItems={foodItems} cart={cart} setCart={setCart} />}
+        <h1 className="mb-3 text-3xl font-bold">Desserts</h1>
+        {foodItems.length && (
+          <FoodItems foodItems={foodItems} cart={cart} setCart={setCart} />
+        )}
       </div>
-      <Cart cart={cart} setCart={setCart}/>
+      <Cart cart={cart} setCart={setCart} />
     </div>
   );
 }

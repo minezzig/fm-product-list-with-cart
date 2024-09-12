@@ -1,8 +1,7 @@
-import { foodItemsProps } from "../types/types";
-import { FoodItem } from "./foodItem";
+import { foodItemsProps } from "../../types";
+import { FoodItem } from "../Food";
 
 export const FoodItems = ({ foodItems, cart, setCart }: foodItemsProps) => {
-
   return (
     <>
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">

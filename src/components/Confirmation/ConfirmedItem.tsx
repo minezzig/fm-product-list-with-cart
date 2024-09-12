@@ -1,4 +1,4 @@
-import { confirmedItemProps } from "../types/types";
+import { confirmedItemProps } from "../../types";
 
 export const ConfirmedItem = ({ item }: confirmedItemProps) => {
   return (

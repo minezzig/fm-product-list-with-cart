@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { cartItemType, cartProps } from "../types/types";
-import { CartItem } from "./cartItem";
-import { ConfirmModal } from "./confirmModal";
+import { cartItemType, cartProps } from "../../types";
+import { CartItem } from "../Cart";
+import { ConfirmModal } from "../Confirmation";
 
 export const Cart = ({ cart, setCart }: cartProps) => {
   const [modalOpen, setModalOpen] = useState(false);
+  
+  // open/close confirmation modal
   const toggleModal = () => {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     setModalOpen((prev) => !prev);
   };
   return (
@@ -55,6 +57,7 @@ export const Cart = ({ cart, setCart }: cartProps) => {
           </button>
         </div>
       ) : (
+        // if there are no items in cart, display this instead
         <div className="flex flex-col items-center justify-center">
           <img
             src="../../assets/images/illustration-empty-cart.svg"
@@ -63,7 +66,14 @@ export const Cart = ({ cart, setCart }: cartProps) => {
           <p className="text-red">Your added items will appear here.</p>
         </div>
       )}
-      {modalOpen && <ConfirmModal cart={cart} setModalOpen={setModalOpen} setCart={setCart} />}
+      {/* modal to be displayed when purchase is made */}
+      {modalOpen && (
+        <ConfirmModal
+          cart={cart}
+          setModalOpen={setModalOpen}
+          setCart={setCart}
+        />
+      )}
     </div>
   );
 };
